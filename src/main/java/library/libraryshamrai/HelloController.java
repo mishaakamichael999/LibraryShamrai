@@ -1,14 +1,34 @@
 package library.libraryshamrai;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
-public class HelloController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class HelloController implements Initializable {
     @FXML
-    private Label welcomeText;
+    private Button button;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private PasswordField password;
+
+    @FXML
+    private TextField username;
+
+    @FXML
+    private ImageView imageUser;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Image image = new Image(getClass().getResourceAsStream("/images/user.png"));
+        imageUser.setImage(image);
     }
 }
